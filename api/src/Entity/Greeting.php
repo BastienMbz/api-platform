@@ -9,7 +9,18 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * This is a dummy entity. Remove it!
  *
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get",
+ *          "post"
+ *     },
+ *     itemOperations={
+ *          "get",
+ *          "delete" = {
+ *              "security"="false"
+ *          }
+ *     }
+ * )
  * @ORM\Entity
  */
 class Greeting
